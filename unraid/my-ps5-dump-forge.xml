@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>ps5-dump-forge</Name>
+  <Repository>ghcr.io/guimello87/ps5-dump-forge:latest</Repository>
+  <Registry>https://github.com/guimello87/ps5-dump-forge/pkgs/container/ps5-dump-forge</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/quer3q/ps5-dump-forge/issues</Support>
+  <Project>https://github.com/quer3q/ps5-dump-forge</Project>
+  <Overview>PS5 Dump Forge web UI: inspect and convert PS5 game dumps (folder, exFAT, ffpkg, ffpfs, pkg, LZ4/zstd packs). Built from upstream releases by github.com/guimello87/ps5-dump-forge. No authentication - LAN/Tailscale only. Web UI on port 8095.</Overview>
+  <Category>Tools:</Category>
+  <WebUI>http://[IP]:8095/</WebUI>
+  <ExtraParams>--user 99:100 --log-driver json-file --log-opt max-size=10m --log-opt max-file=3</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/ps5-dump-forge/config" Mode="rw" Description="Forge settings/state" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ps5-dump-forge/config</Config>
+  <Config Name="PS5 games" Target="/games" Default="/mnt/user/ps5/PS5" Mode="rw" Description="Browse root; conversions are written next to the source" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/ps5/PS5</Config>
+</Container>
